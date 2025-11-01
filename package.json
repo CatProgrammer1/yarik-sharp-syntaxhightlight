@@ -1,0 +1,38 @@
+{
+  "name": "yariksharp",
+  "displayName": "yariksharp",
+  "description": "Very cool programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CatProgrammer1/yarik-sharp-syntaxhightlight"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "yariksharp",
+        "aliases": [
+          "Yarik#",
+          "yariksharp"
+        ],
+        "extensions": [
+          ".yks"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "yariksharp",
+        "scopeName": "source.yariksharp",
+        "path": "./syntaxes/yariksharp.tmLanguage.json"
+      }
+    ]
+  }
+}

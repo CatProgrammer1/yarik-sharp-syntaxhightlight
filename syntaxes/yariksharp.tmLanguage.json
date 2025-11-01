@@ -1,0 +1,112 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Yarik#",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#imports" },
+		{ "include": "#strings" },
+		{ "include": "#numbers" },
+		{ "include": "#keywords" },
+		{ "include": "#operators" },
+		{ "include": "#booleans" },
+		{ "include": "#structs" },
+		{ "include": "#functions" }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.yariksharp",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"imports": {
+			"patterns": [
+				{
+					"name": "keyword.control.import.yariksharp",
+					"match": "\\bimport\\b"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.yariksharp",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{ "match": "\\\\.", "name": "constant.character.escape.yariksharp" }
+					]
+				},
+				{
+					"name": "string.quoted.single.yariksharp",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{ "match": "\\\\.", "name": "constant.character.escape.yariksharp" }
+					]
+				},
+				{
+					"name": "string.quoted.other.yariksharp",
+					"begin": "`",
+					"end": "`"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.yariksharp",
+					"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.yariksharp",
+					"match": "\\b(yar|if|while|break|continue|return|import|new|struct|func)\\b"
+				}
+			]
+		},
+		"structs": {
+			"patterns": [
+				{
+					"name": "entity.name.type.struct.yariksharp",
+					"match": "\\bstruct\\s+[A-Z][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.yariksharp",
+					"match": "\\bfunc\\s+[a-zA-Z_][A-Za-z0-9_]*\\b"
+				},
+				{
+					"name": "support.function.builtin.yariksharp",
+					"match": "\\b(OS_NAME|print|sleep|throw|len|tostr|tonum|gettype|tochar)\\b"
+				}
+			]
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.yariksharp",
+					"match": "\\b(true|false|void)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.yariksharp",
+					"match": "(==|!=|>=|<=|&&|\\|\\||->|[+\\-*/^=><,:{}\\[\\]()])"
+				}
+			]
+		}
+	},
+	"scopeName": "source.yariksharp"
+}
